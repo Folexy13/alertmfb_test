@@ -79,7 +79,7 @@ Swagger provides an interactive API documentation interface that can be accessed
 Once your server is running, open the browser and visit:
 
 ```
-http://localhost:3000/api
+https://alertmfb-test.onrender.com/api
 ```
 
 ### Using Postman
@@ -87,7 +87,7 @@ http://localhost:3000/api
 You can use use Postman to manually test all the API endpoints. To facilitate this,visit :
 
 ```
-http://localhost:3000/api
+https://documenter.getpostman.com/view/14121430/2sAXxY38ab
 ```
 
 ## Testing
