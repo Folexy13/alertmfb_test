@@ -1,0 +1,60 @@
+// Database connection settings for Prisma to connect to the database
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Prisma client generator, which generates TypeScript client code for querying the database
+generator client {
+  provider = "prisma-client-js"
+}
+
+// This is the User Model.
+// Each user has a many-to-many relationship with roles through the UserRoles join table.
+// A passwordHash field is used to store the hashed password, while createdAt tracks the account creation date.
+model User {
+  id           Int         @id @default(autoincrement()) // Primary key, auto-incremented
+  firstName    String // User's first name
+  lastName     String // User's last name
+  email        String      @unique // Unique email for authentication and identification
+  passwordHash String // Hashed password for secure authentication
+  createdAt    DateTime    @default(now()) // Timestamp of when the user was created
+  twoFA        Boolean     @default(false) // Just an icing sugar to track if two-fa is enabled for double security
+  isActive     Boolean     @default(true) // Just an icing sugar to track if two-fa is enabled for double security
+  roles        Role[]      @relation("UserRoles") // Many-to-many relation with Role through UserRoles join table
+  UserRoles    UserRoles[]
+
+  @@map("users") // Maps the model to the "users" table in the database
+}
+
+// This is the Role Model
+// The Role model defines various roles in the system, each with its own set of permissions.
+// The many-to-many relationship between Role and Permission is handled via the RolePermissions join table.
+model Role {
+  id          Int          @id @default(autoincrement()) // Primary key, auto-incremented
+  name        String       @unique // Name of the role and it is unique (e.g., 'Admin', 'User')
+  users       User[]       @relation("UserRoles") // Many-to-many relation with User via UserRoles join table
+  UserRoles   UserRoles[]
+  permissions Permission[] @relation("RolePermissions")
+
+  @@map("roles") // Maps the model to the "roles" table in the database
+}
+
+model Permission {
+  id    Int    @id @default(autoincrement())
+  name  String @unique
+  roles Role[] @relation("RolePermissions")
+}
+
+// The UserRoles model is a join table that links users and roles to implement a many-to-many relationship.
+// Each record in this table connects a user to a role.
+model UserRoles {
+  userId Int // Foreign key referencing the User model
+  roleId Int // Foreign key referencing the Role model
+
+  user User @relation(fields: [userId], references: [id]) // Establishes the relationship to the User model
+  role Role @relation(fields: [roleId], references: [id]) // Establishes the relationship to the Role model
+
+  @@id([userId, roleId]) // Composite primary key made up of userId and roleId
+  @@map("user_roles") // Maps the model to the "user_roles" table in the database
+}
