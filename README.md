@@ -1,9 +1,3 @@
-If you're using Postman for API testing, you might want to structure your NestJS application documentation to ensure that your API endpoints are easily discoverable and can be tested thoroughly. Since you're also using Postman, you can either export a Postman collection for others to use or integrate Swagger for comprehensive API documentation.
-
-Here's how you can provide a clear and professional readme that includes both Swagger setup and mentions of Postman usage:
-
----
-
 # NestJS Prisma Project
 
 This is a **NestJS** project using **Prisma ORM** and **JWT Authentication**. The project implements role-based access control (RBAC), user management, password reset functionality, and more.
@@ -25,7 +19,7 @@ This is a **NestJS** project using **Prisma ORM** and **JWT Authentication**. Th
 1. Clone the repository:
 
 ```bash
-$ git clone <your-repo-url>
+$ git clone https://github.com/Folexy13/alertmfb_test.git
 ```
 
 2. Navigate into the project directory:
@@ -72,6 +66,7 @@ $ npm run start:prod
 ## API Documentation
 
 This project provides API documentation through **Swagger** and supports **Postman** for testing.
+for live view, you can interact with the swagger or postman documentation
 
 ### Using Swagger
 
@@ -116,7 +111,7 @@ $ npm run test:cov
 
 To deploy the project, follow these steps:
 
-1. Make sure the environment variables are properly set for production, especially `DATABASE_URL`, `JWT_SECRET`, and `JWT_REFRESH_SECRET`. example of how the env file is structured can be found in .env.sample file
+1. Make sure the environment variables are properly set for production, especially `DATABASE_URL`, `JWT_SECRET`, and `JWT_REFRESH_SECRET`etc. other environment variables can be found in the .env.sample file
 2. Build the project:
 
 ```bash
