@@ -20,8 +20,8 @@ yarn-error.log*
 Thumbs.db
 
 # Prisma
-src/prisma/migrations/
-src/prisma/generated/
+src/database/migrations/
+src/database/generated/
 
 # TypeScript
 *.tsbuildinfo

@@ -20,7 +20,7 @@ prisma-migrate-prod:
 
 prisma-seed:
 	@echo "Seeding database..."
-	@node ./dist/src/prisma/seed.ts
+	@node ./dist/src/database/seed.ts
 
 prisma-studio:
 	@echo "Starting Prisma Studio..."
