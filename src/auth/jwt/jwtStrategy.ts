@@ -1,7 +1,7 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
-import { PrismaService } from '../prisma/prisma.services';
+import { PrismaService } from '../../database/prisma.services';
 import { JwtService } from '@nestjs/jwt';
 import { TokenExpiredError, JsonWebTokenError } from 'jsonwebtoken';  // For handling specific JWT errors
 

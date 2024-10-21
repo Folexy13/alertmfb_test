@@ -1,6 +1,6 @@
 import { ForbiddenException, Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
 
-import { PrismaService } from '../prisma/prisma.services';
+import { PrismaService } from '../database/prisma.services';
 import { AssignRoleDto, UpdateUserDto } from './dto/create-user.dto';
 
 @Injectable()

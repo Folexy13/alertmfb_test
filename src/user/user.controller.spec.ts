@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { UserController } from './user.controller';
 import { UserService } from './user.service';
-import { RolesGuard } from '../auth/roles.guard';
-import { JwtAuthGuard } from '../shared/jwt.guard';
+import { RolesGuard } from '../auth/roles/roles.guard';
+import { JwtAuthGuard } from '../auth/jwt/jwt.guard';
 import { AssignRoleDto, UpdateUserDto } from './dto/create-user.dto';
 
 // Mock data

@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
-import { PrismaService } from '../prisma/prisma.services';
+import { PrismaService } from '../database/prisma.services';
 import { AuthController } from './auth.controller';
-import { JwtStrategy } from '../shared/jwtStrategy';
+import { JwtStrategy } from './jwt/jwtStrategy';
 
 @Module({
   imports: [

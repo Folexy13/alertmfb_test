@@ -1,6 +1,6 @@
 import { Injectable, UnauthorizedException, BadRequestException, InternalServerErrorException, NotFoundException } from '@nestjs/common';
 import { CreateUserDto, LoginDto, ForgotPasswordDto, ResetPasswordDto } from './dto/create.dto';
-import { PrismaService } from '../prisma/prisma.services';
+import { PrismaService } from '../database/prisma.services';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
 import { MailerService } from '@nestjs-modules/mailer';

@@ -1,7 +1,7 @@
 import { Injectable, CanActivate, ExecutionContext, ForbiddenException, UnauthorizedException } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { ROLES_KEY } from './roles.decorator';
-import { UserService } from '../user/user.service';
+import { ROLES_KEY } from '../../common/decorators/roles.decorator';
+import { UserService } from '../../user/user.service';
 import * as jwt from 'jsonwebtoken';
 
 @Injectable()

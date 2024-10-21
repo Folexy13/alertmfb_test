@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { PrismaService, SeedService } from './prisma/prisma.services';
+import { PrismaService, SeedService } from './database/prisma.services';
 import { UserService } from './user/user.service';
 import { APP_GUARD } from '@nestjs/core';
-import { RolesGuard } from './auth/roles.guard';
+import { RolesGuard } from './auth/roles/roles.guard';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { MailerModule } from '@nestjs-modules/mailer';

@@ -1,5 +1,5 @@
 import { Reflector } from '@nestjs/core';
-import { RolesGuard } from '../auth/roles.guard';
+import { RolesGuard } from '../auth/roles/roles.guard';
 import { ExecutionContext } from '@nestjs/common';
 import { UserService } from '../user/user.service';
 
